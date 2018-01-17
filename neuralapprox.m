@@ -13,11 +13,11 @@ clc;clear;
 
 %Function that has to be interpolated
 %F = @(x) ( 1./(1 + 25*x.^2) ); 
-F = @(x) ( sin(8*pi*x)); 
+F = @(x) ( sin(6*pi*x)); 
 
-MAX = 100000; %Number of iterations to train the network
+MAX = 1000; %Number of iterations to train the network
 
-N = 500; %Number of nodes in hidden layer, i.e. number of terms in our series
+N = 50; %Number of nodes in hidden layer, i.e. number of terms in our series
 
 etamax = 100;
 
@@ -56,7 +56,7 @@ B_pp = B_p;
 dB = B_p;
 
 %Increase the training size as you increase number of parameters
-x = 0:0.00001:1; %Training input
+x = 0:0.001:1; %Training input
 
 Y = F(x);
 
