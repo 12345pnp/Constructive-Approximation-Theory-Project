@@ -19,7 +19,8 @@ MAX = 1000; %Number of iterations to train the network
 
 N = 50; %Number of nodes in hidden layer, i.e. number of terms in our series
 
-etamax = 100;
+etamax = 1;
+
 
 %Learning rate vectors for all weights initialzed
 etaW = 0.01*ones(N,1);
@@ -68,7 +69,7 @@ x2 =  (x - mean(x) ) /std(x);
 
 Y2 =  (Y - mean(Y) ) /std(Y);
 
-%WB = waitbar(0,'Please wait...');
+WB = waitbar(0,'Please wait...');
 
 figure(1)
 for iter = 1:MAX
@@ -142,7 +143,7 @@ E_RR(iter) = sum((O - Y2).^2)/Tsize;
 plot(x2,O,x2,Y2, 'linewidth',2.5);
 end
 
-%close(WB);
+close(WB);
 
 x3 = 0:0.0033333:1;
 
